@@ -1,19 +1,32 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <StyledSection className="bg-[url('/svgs/edited.png')] h-screen ">
       <StyledHeadingContainer className="flex-col text-dark pt-5">
-        <h2 className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl">
+        <motion.h2
+          animate={{ y: -100 }}
+          transition={{ delay: 0.5 }}
+          className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl"
+        >
           Health Is
-        </h2>
-        <h2 className="font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl  xl:text-10xl">
+        </motion.h2>
+        <motion.h2
+          animate={{ y: -100 }}
+          transition={{ delay: 1 }}
+          className="font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl  xl:text-10xl"
+        >
           LOVE, COMPASSION
-        </h2>
-        <h2 className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl  xl:text-8xl">
+        </motion.h2>
+        <motion.h2
+          animate={{ y: -100 }}
+          transition={{ delay: 1.5 }}
+          className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl  xl:text-8xl"
+        >
           AND CARE
-        </h2>
+        </motion.h2>
       </StyledHeadingContainer>
     </StyledSection>
   );
