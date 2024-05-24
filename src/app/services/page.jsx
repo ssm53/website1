@@ -10,7 +10,7 @@ const ServicesPage = ({ currentPage }) => {
       >
         <div
           className="flex flex-wrap justify-center"
-          style={{ width: "100%", background: "yellow" }}
+          style={{ width: "100%" }}
         >
           <div className="text-sec md:w-1/2">
             <div>
