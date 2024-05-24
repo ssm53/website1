@@ -12,6 +12,11 @@ function MultipleItems() {
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 1000,
+    speed: 2000,
+    pauseOnHover: true,
+    centerMode: true,
     nextArrow: <></>,
     prevArrow: <></>,
     responsive: [
@@ -42,40 +47,61 @@ function MultipleItems() {
     ],
   };
   return (
-    <div className="slider-container pt-14">
-      <Slider {...settings}>
-        <div>
+    <StyledWrapper className="slider-container pt-14">
+      <StyledSlider {...settings}>
+        <StyledImageContainer>
           <StyledImage
             src="/svgs/doctors.jpg"
             alt="doctor"
-            width={400}
-            height={400}
+            width={350}
+            height={350}
           />
-        </div>
-        <div>
+        </StyledImageContainer>
+        <StyledImageContainer>
           <StyledImage
             src="/svgs/operation.jpg"
             alt="doctor"
-            width={400}
-            height={400}
+            width={350}
+            height={350}
           />
-        </div>
-        <div>
+        </StyledImageContainer>
+        <StyledImageContainer>
           <StyledImage
             src="/svgs/baby.jpg"
             alt="doctor"
-            width={400}
-            height={400}
+            width={350}
+            height={350}
           />
-        </div>
-      </Slider>
-    </div>
+        </StyledImageContainer>
+        <StyledImageContainer>
+          <StyledImage
+            src="/svgs/baby.jpg"
+            alt="doctor"
+            width={350}
+            height={350}
+          />
+        </StyledImageContainer>
+      </StyledSlider>
+    </StyledWrapper>
   );
 }
 
 export default MultipleItems;
 
-const StyledImage = styled(Image)`
-  margin: 0 auto;
-  padding: 0 15px;
+const StyledWrapper = styled.div`
+  background-color: #f4f8ff;
+  width: 100%;
 `;
+const StyledSlider = styled(Slider)`
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+`;
+
+const StyledImageContainer = styled.div`
+  display: flex;
+  padding: 2px;
+`;
+
+const StyledImage = styled(Image)``;

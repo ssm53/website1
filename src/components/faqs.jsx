@@ -9,9 +9,10 @@ const FAQS = () => {
     <StyledWrapper className="pt-4">
       <StyledAccordion variant="light">
         <AccordionItem
+          className="accordian"
           key="1"
           aria-label="Accordion 1"
-          title="Do you accept new patients?    "
+          title="Do you accept new patients?"
         >
           {defaultContent}
         </AccordionItem>
@@ -22,13 +23,14 @@ const FAQS = () => {
 
 export default FAQS;
 const StyledWrapper = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: center;
+  width: 93%;
+  margin: 0 auto;
+  padding: 0;
 `;
 const StyledAccordion = styled(Accordion)`
-  width: 98%;
+  width: 100%;
   box-shadow: 3px 2px 8px 4px rgba(0, 0, 0, 0.1);
+
   .text-default-400 {
     border-radius: 50%;
     background-color: #007bff;

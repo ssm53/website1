@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.page__StyledFaqWrapper-sc-1b83eb39-4 {
+    padding: 0;
+}

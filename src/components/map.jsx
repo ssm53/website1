@@ -1,6 +1,6 @@
 import React from "react";
 import GoogleMapReact from "google-map-react";
-
+import styled from "styled-components";
 const AnyReactComponent = ({ text }) => <div>{text}</div>;
 
 export default function Map() {
@@ -12,14 +12,29 @@ export default function Map() {
     zoom: 11,
   };
   return (
-    <div className="pt-10" style={{ height: "50vh", width: "100%" }}>
-      <GoogleMapReact
-        // bootstrapURLKeys={{ key: "" }}
-        defaultCenter={defaultProps.center}
-        defaultZoom={defaultProps.zoom}
-      >
-        <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
-      </GoogleMapReact>
-    </div>
+    <StyledMapContainer className="pt-10">
+      <StyledMapWrapper>
+        <GoogleMapReact
+          // bootstrapURLKeys={{ key: "" }}
+          defaultCenter={defaultProps.center}
+          defaultZoom={defaultProps.zoom}
+        >
+          <AnyReactComponent lat={59.955413} lng={30.337844} text="My Marker" />
+        </GoogleMapReact>
+      </StyledMapWrapper>
+    </StyledMapContainer>
   );
 }
+
+const StyledMapContainer = styled.div`
+  width: 100%;
+  .cvEkkq {
+    width: 20%;
+  }
+`;
+const StyledMapWrapper = styled.div`
+  width: 100%;
+  /* margin: 0 auto; */
+  height: 50vh;
+  background-color: blue;
+`;

@@ -5,7 +5,7 @@ import { FiMapPin, FiPhone, FiMail, FiMessageSquare } from "react-icons/fi";
 const Address = () => {
   return (
     <StyledWrapper className="pt-14 px-6 pb-5">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between">
+      <StyledAddressContainer className="max-w-6xl mx-auto flex flex-col lg:flex-row justify-between">
         <div>
           <h2 className="text-2xl font-bold mb-4">United States</h2>
           <div className=" pt-4">
@@ -40,13 +40,15 @@ const Address = () => {
             <p>123-456-7890</p>
           </div>
         </div>
-      </div>
+      </StyledAddressContainer>
     </StyledWrapper>
   );
 };
 
 export default Address;
 const StyledWrapper = styled.div`
-  width: 100%;
-  background-color: #f1f1f1;
+  width: 90%;
+`;
+const StyledAddressContainer = styled.div`
+  margin: 0 auto;
 `;

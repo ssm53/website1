@@ -10,6 +10,7 @@ import Map from "@/components/map";
 import Address from "@/components/address";
 import FAQS from "@/components/faqs";
 import SendUsInquiry from "@/components/send-us-inquiry";
+import Partners from "@/components/partners";
 
 export default function Home() {
   return (
@@ -19,13 +20,17 @@ export default function Home() {
         et dictumst duis gravida odio semper. Integer potenti viverra et
         interdum lobortis amet nisi lorem. Amet sed sit risus dictum dolor. Sem
         enim eget ac morbi placerat. interdum lobortis amet nisi lorem. Amet sed" />
+
       <ServicesCard />
-      <Headings title="Our Clinic" />
-      <OurClinicSlider />
+      <StyledClinicWrapper className="mt-10 pb-12">
+        <Headings title="Our Clinic" />
+        <OurClinicSlider />
+      </StyledClinicWrapper>
+
       <Headings title="Meet Our Team" />
       <TeamCArd />
       <Headings title="Contact Us" />
-      <StyledMapParent className="flex gap-5 justify-evenly">
+      <StyledMapParent className="flex gap-3 justify-center">
         <StyledMapWrapper>
           <Map />
           < Address />
@@ -50,17 +55,28 @@ export default function Home() {
         <FAQS />
         <FAQS />
       </StyledFaqWrapper>
-      <div>
+      <div className="mt-20" style={{ background: '#F4F8FF' }}>
         <Headings title="Send Us An Inquiry" />
         <SendUsInquiry />
+      </div>
+      <div >
+        <Headings title="Our Trusted Partners" />
+        <Partners />
       </div>
 
     </main>
   );
 }
 
+const StyledServicesCardWrapper = styled.div`
+background-color: orange;
+`
+const StyledClinicWrapper = styled.div`
+background-color: #F4F8FF;
+`
+
 const StyledMapParent = styled.div`
-padding: 10px;
+/* background-color: #F4F8FF; */
 @media only screen and (max-width: 768px) {
  display: flex;
  justify-content: center;
@@ -71,7 +87,7 @@ padding: 10px;
 
 const StyledMapWrapper = styled.div`
 min-width: 30%;
-max-width: 95%;
+/* max-width: 95%; */
 @media only screen and (max-width: 768px) {
  width: 95%;
 }

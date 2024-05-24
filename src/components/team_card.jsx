@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
 const TeamCardList = () => {
@@ -62,10 +63,10 @@ const TeamCardList = () => {
   ];
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 px-4 pt-10 ">
+    <StyledCardWrapper className="grid grid-cols-2 md:grid-cols-4 gap-4  pt-10 ">
       {cardsData.map((card, index) => (
         <div key={index}>
-          <Card className="py-4 pb-0 px-4 flex-col items-center">
+          <StyledCard className="py-4 pb-0 px-4 flex-col items-center">
             <Image
               alt="Card background"
               className="object-cover rounded-xl"
@@ -82,11 +83,20 @@ const TeamCardList = () => {
               </small>
             </CardHeader>
             <CardBody className="overflow-visible py-2"></CardBody>
-          </Card>
+          </StyledCard>
         </div>
       ))}
-    </div>
+    </StyledCardWrapper>
   );
 };
 
 export default TeamCardList;
+
+const StyledCard = styled(Card)`
+  background-color: #f4f8ff;
+`;
+
+const StyledCardWrapper = styled.div`
+  width: 90%;
+  margin: 0 auto;
+`;

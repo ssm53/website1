@@ -6,14 +6,12 @@ import { CiHospital1 } from "react-icons/ci";
 const ServiceCard = ({ icon, header, body }) => {
   return (
     <div
-      className="flex justify-center"
       style={{
-        margin: "2px",
-        height: "auto",
         margin: "0 auto",
+        width: "auto",
       }}
     >
-      <StyledCard className=" p-7 my-16 ">
+      <StyledCard className=" p-7 my-1" fullWidth>
         <CardHeader className="flex flex-col justify-center items-center">
           {icon}
           <StyledHeading>{header}</StyledHeading>
@@ -88,7 +86,12 @@ const ServicesCard = () => {
     setShowAll((prevShowAll) => !prevShowAll);
   };
   return (
-    <>
+    <div
+      style={{
+        width: "90%",
+        margin: "0 auto",
+      }}
+    >
       <ServicesGrid>
         {showAll
           ? cardsData.map((card, index) => (
@@ -110,26 +113,27 @@ const ServicesCard = () => {
                 />
               ))}
       </ServicesGrid>
-      <div className="flex justify-center">
+      <div className="flex justify-center pt-8">
         <StyledLoadMoreButton className="" onClick={handleToggleCards}>
           {showAll ? "Show Less" : "More Services"}
         </StyledLoadMoreButton>
       </div>
-    </>
+    </div>
   );
 };
 
 export default ServicesCard;
 
+const StyledWrapper = styled.div`
+  background-color: red;
+  width: calc() 90%;
+`;
 const StyledHeading = styled.h2`
   font-size: 20px;
   font-weight: 500;
 `;
 
 const StyledCard = styled(Card)`
-  width: 90%;
-  max-width: 400px;
-  min-width: 230px;
   background-color: #f4f8ff;
 `;
 
@@ -143,9 +147,12 @@ const StyledButton = styled(Button)`
 `;
 
 const ServicesGrid = styled.div`
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, minmax(230px, 1fr));
+  }
 `;
 const StyledLoadMoreButton = styled(Button)`
   width: 200px;

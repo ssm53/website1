@@ -92,7 +92,9 @@ export default function App() {
 const StyledNavbar = styled(Navbar)`
   width: 100%;
   height: 100px;
-  gap: 5;
+  display: flex;
+  justify-content: space-between;
+  /* gap: 5; */
   margin: 0 auto;
   position: absolute;
   top: 0;
@@ -101,10 +103,14 @@ const StyledNavbar = styled(Navbar)`
   backdrop-filter: blur(5px);
   header {
     width: 90%;
+    margin: 0 auto;
+    padding: 0;
   }
 `;
 
 const StyledNavbarItem = styled(NavbarContent)`
   display: flex;
+  justify-content: flex-start;
+  padding: 0;
   gap: 3rem;
 `;

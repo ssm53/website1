@@ -4,14 +4,14 @@ import styled from "styled-components";
 const Hero = () => {
   return (
     <StyledSection className="bg-[url('/svgs/edited.png')] h-screen ">
-      <StyledHeadingContainer className="flex-col text-dark">
-        <h2 className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
+      <StyledHeadingContainer className="flex-col text-dark pt-5">
+        <h2 className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl">
           Health Is
         </h2>
-        <h2 className="font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
+        <h2 className="font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl  xl:text-10xl">
           LOVE, COMPASSION
         </h2>
-        <h2 className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl">
+        <h2 className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl  xl:text-8xl">
           AND CARE
         </h2>
       </StyledHeadingContainer>
@@ -27,7 +27,7 @@ const StyledSection = styled.section`
   margin: 0 auto;
   display: flex;
   justify-content: flex-start;
-  align-items: flex-end;
+  align-items: center;
   padding-bottom: 5rem;
   background-repeat: no-repeat;
   /* background-image: url(""); */
@@ -40,9 +40,8 @@ const StyledSection = styled.section`
   }
 `;
 const StyledHeadingContainer = styled.div`
-  padding-left: 5.5rem;
-  display: flex;
-  justify-content: center;
+  width: 90%;
+  margin: 0 auto;
   color: white;
   @media (max-width: 768px) {
     padding-left: 0;
