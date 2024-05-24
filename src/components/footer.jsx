@@ -25,8 +25,7 @@ const Footer = () => {
               <p className="pt-8">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Deserunt sint repellendus cum nisi mollitia. Quisquam, vel
-                corporis repellat ab quam veritatis illo ullam nihil ipsam autem
-                id possimus consequatur iure.
+                corporis repellat ab quam veritatis illo ullam nihil
               </p>
             </div>
           </StyledLogoWrapper>
@@ -92,9 +91,8 @@ const StyledWrapper = styled.div`
 
 const StyledLogoWrapper = styled.div`
   width: 30%;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     width: 100%;
-    background-color: red;
     .logo {
       display: flex;
       justify-content: center;
@@ -103,10 +101,9 @@ const StyledLogoWrapper = styled.div`
 `;
 const StyledLFeaturesWrapper = styled.div`
   width: 20%;
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 768px) {
     text-align: center;
     width: 100%;
-    background-color: #2a1ca9;
     ul {
       padding: 0;
     }
@@ -116,11 +113,15 @@ const StyledLFeaturesWrapper = styled.div`
   }
 `;
 const StyledFollowusWrapper = styled.div`
-  width: 15%;
-  @media only screen and (max-width: 600px) {
+  text-align: start;
+  width: 20%;
+  .icons {
+    display: flex;
+    justify-content: start;
+  }
+  @media only screen and (max-width: 768px) {
     width: 100%;
     text-align: center;
-    background-color: #0db492;
     h3 {
       padding-top: 1rem;
     }
