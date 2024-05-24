@@ -15,9 +15,8 @@ import {
 import Image from "next/image";
 import Logo from "../../public/svgs/Logo.svg";
 
-export default function App() {
+const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-
   const menuItems = ["Home", "Services", "Our Team", "Contact Us", "FAQs"];
 
   return (
@@ -39,12 +38,12 @@ export default function App() {
 
       <NavbarContent className="hidden sm:flex gap-14" justify="end">
         <StyledCustomNavItem>
-          <Link className="text-white" href="#">
+          <Link className="text-white" href="/">
             Home
           </Link>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link href="#" className="text-white" aria-current="page">
+          <Link href="/services" className="text-white" aria-current="page">
             Services
           </Link>
         </StyledCustomNavItem>
@@ -87,7 +86,8 @@ export default function App() {
       </MobNavbarMenu>
     </StyledNavbar>
   );
-}
+};
+export default NavbarComponent;
 
 const StyledNavbar = styled(Navbar)`
   width: 100%;

@@ -1,15 +1,18 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-const ServicesPage = () => {
+const ServicesPage = ({ currentPage }) => {
   return (
-    <StyledWrapper>
+    <StyledWrapper currentPage={currentPage}>
       <div
         className="container mx-auto"
         style={{ width: "90%", margin: "0 auto" }}
       >
-        <div className="flex flex-wrap justify-center">
-          <div className="md:w-1/2" style={{ width: "60%" }}>
+        <div
+          className="flex flex-wrap justify-center"
+          style={{ width: "100%", background: "yellow" }}
+        >
+          <div className="text-sec md:w-1/2">
             <div>
               <h1 className="text-3xl font-semibold mb-4">Our Services</h1>
               <ul>
@@ -36,7 +39,7 @@ const ServicesPage = () => {
               </ul>
             </div>
           </div>
-          <div className="md:w-1/2  flex justify-end" style={{ width: "40%" }}>
+          <div className=" image-sec md:w-1/2 flex justify-end">
             <img src="./svgs/doctors.jpg" alt="Service Image" />
           </div>
         </div>
@@ -49,6 +52,21 @@ export default ServicesPage;
 
 const StyledWrapper = styled.div`
   padding: 7rem 0;
+  @media (max-width: 768px) {
+    .flex-wrap {
+      flex-direction: column;
+    }
+    .text-sec {
+      width: 100%;
+      text-align: center;
+    }
+    .image-sec {
+      order: -1;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+    }
+  }
 `;
 
 const StyledListWrapper = styled.li`

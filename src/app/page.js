@@ -94,7 +94,6 @@ const StyledMapParent = styled.div`
 
 const StyledMapWrapper = styled.div`
   min-width: 30%;
-  /* max-width: 95%; */
   @media only screen and (max-width: 768px) {
     width: 95%;
   }
