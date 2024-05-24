@@ -27,14 +27,23 @@ const StyledWrapper = styled.div`
   margin: 0 auto;
   padding: 0;
 `;
+
 const StyledAccordion = styled(Accordion)`
   width: 100%;
-  box-shadow: 3px 2px 8px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: -2px 4px 10px -1px rgba(0, 0, 0, 0.1);
+  padding: 0 2rem;
 
   .text-default-400 {
     border-radius: 50%;
     background-color: #007bff;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
+  }
+  .accordian {
+    section {
+      width: 95%;
+      color: rgba(102, 102, 102, 1);
+      padding-bottom: 2rem;
+    }
   }
 `;

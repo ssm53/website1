@@ -18,7 +18,7 @@ import Logo from "../../public/svgs/Logo.svg";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  const menuItems = ["Home", "Services", "Our Team", "Contact Us", "GFAQs"];
+  const menuItems = ["Home", "Services", "Our Team", "Contact Us", "FAQs"];
 
   return (
     <StyledNavbar
@@ -38,34 +38,34 @@ export default function App() {
       </StyledNavbarItem>
 
       <NavbarContent className="hidden sm:flex gap-14" justify="end">
-        <NavbarItem>
+        <StyledCustomNavItem>
           <Link className="text-white" href="#">
             Home
           </Link>
-        </NavbarItem>
-        <NavbarItem>
+        </StyledCustomNavItem>
+        <StyledCustomNavItem>
           <Link href="#" className="text-white" aria-current="page">
             Services
           </Link>
-        </NavbarItem>
-        <NavbarItem>
+        </StyledCustomNavItem>
+        <StyledCustomNavItem>
           <Link className="text-white" href="#">
             Our Team
           </Link>
-        </NavbarItem>
-        <NavbarItem>
+        </StyledCustomNavItem>
+        <StyledCustomNavItem>
           <Link className="text-white" href="#">
             Contact Us
           </Link>
-        </NavbarItem>
-        <NavbarItem>
+        </StyledCustomNavItem>
+        <StyledCustomNavItem>
           <Link className="text-white" href="#">
             FAQs
           </Link>
-        </NavbarItem>
+        </StyledCustomNavItem>
       </NavbarContent>
 
-      <NavbarMenu>
+      <MobNavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
@@ -76,7 +76,7 @@ export default function App() {
                   ? "danger"
                   : "foreground"
               }
-              className="w-full"
+              className="w-full mob-link"
               href="#"
               size="lg"
             >
@@ -84,7 +84,7 @@ export default function App() {
             </Link>
           </NavbarMenuItem>
         ))}
-      </NavbarMenu>
+      </MobNavbarMenu>
     </StyledNavbar>
   );
 }
@@ -113,4 +113,15 @@ const StyledNavbarItem = styled(NavbarContent)`
   justify-content: flex-start;
   padding: 0;
   gap: 3rem;
+`;
+
+const StyledCustomNavItem = styled(NavbarItem)``;
+const MobNavbarMenu = styled(NavbarMenu)`
+  margin-top: 2rem;
+  gap: 30px;
+  padding-top: 4rem;
+  .mob-link {
+    font-size: 40px;
+    color: #000 !important;
+  }
 `;

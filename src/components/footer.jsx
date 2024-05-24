@@ -10,7 +10,7 @@ const Footer = () => {
         className="bg-gray-200 py-8"
         style={{ width: "90%", margin: "0 auto" }}
       >
-        <StyledWrapper className="flex justify-between max-w-6xl mx-auto">
+        <StyledWrapper className="flex justify-between mx-auto">
           <div className="w-1/3" style={{ width: "30%" }}>
             <div className="flex flex-col justify-start">
               <div className="flex">

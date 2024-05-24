@@ -3,11 +3,8 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 const Partners = () => (
-  <div
-    className="py-10"
-    style={{ width: "90%", height: "300px", margin: "0 auto" }}
-  >
-    <Marquee className="mt-10 ">
+  <div className="py-10">
+    <Marquee className="my-12">
       <div className="px-20">
         <img
           src="./svgs/partner2.jpg"

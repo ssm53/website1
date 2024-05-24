@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import styled from "styled-components";
 
 import Hero from "@/components/hero";
@@ -14,12 +14,15 @@ import Partners from "@/components/partners";
 
 export default function Home() {
   return (
-    <main >
+    <main>
       <Hero />
-      <Headings title="Our Services" description=" Lorem ipsum dolor sit amet consectetur. Faucibus arcu ultrices gravida
+      <Headings
+        title="Our Services"
+        description=" Lorem ipsum dolor sit amet consectetur. Faucibus arcu ultrices gravida
         et dictumst duis gravida odio semper. Integer potenti viverra et
         interdum lobortis amet nisi lorem. Amet sed sit risus dictum dolor. Sem
-        enim eget ac morbi placerat. interdum lobortis amet nisi lorem. Amet sed" />
+        enim eget ac morbi placerat. interdum lobortis amet nisi lorem. Amet sed"
+      />
 
       <ServicesCard />
       <StyledClinicWrapper className="mt-10 pb-12">
@@ -33,15 +36,15 @@ export default function Home() {
       <StyledMapParent className="flex gap-3 justify-center">
         <StyledMapWrapper>
           <Map />
-          < Address />
+          <Address />
         </StyledMapWrapper>
         <StyledMapWrapper>
           <Map />
-          < Address />
+          <Address />
         </StyledMapWrapper>
         <StyledMapWrapper>
           <Map />
-          < Address />
+          <Address />
         </StyledMapWrapper>
       </StyledMapParent>
       <Headings title="FAQs" />
@@ -55,43 +58,49 @@ export default function Home() {
         <FAQS />
         <FAQS />
       </StyledFaqWrapper>
-      <div className="mt-20" style={{ background: '#F4F8FF' }}>
+      <div className="mt-20" style={{ background: "#F4F8FF" }}>
         <Headings title="Send Us An Inquiry" />
         <SendUsInquiry />
       </div>
-      <div >
+      <div>
         <Headings title="Our Trusted Partners" />
         <Partners />
       </div>
-
     </main>
   );
 }
 
 const StyledServicesCardWrapper = styled.div`
-background-color: orange;
-`
+  background-color: orange;
+`;
 const StyledClinicWrapper = styled.div`
-background-color: #F4F8FF;
-`
+  background-color: #f4f8ff;
+`;
 
 const StyledMapParent = styled.div`
-/* background-color: #F4F8FF; */
-@media only screen and (max-width: 768px) {
- display: flex;
- justify-content: center;
- flex-direction: column;
- align-items: center;
-}
-`
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 const StyledMapWrapper = styled.div`
-min-width: 30%;
-/* max-width: 95%; */
-@media only screen and (max-width: 768px) {
- width: 95%;
-}
-`
+  min-width: 30%;
+  /* max-width: 95%; */
+  @media only screen and (max-width: 768px) {
+    width: 95%;
+  }
+`;
 const StyledFaqWrapper = styled.div`
-padding: 0 20px;
-`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  padding: 0 20px;
+`;
