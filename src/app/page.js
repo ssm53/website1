@@ -1,6 +1,5 @@
 "use client";
 import styled from "styled-components";
-
 import Hero from "@/components/hero";
 import Headings from "@/components/headings";
 import ServicesCard from "@/components/services_card";
@@ -30,7 +29,10 @@ export default function Home() {
         <OurClinicSlider />
       </StyledClinicWrapper>
 
-      <Headings title="Meet Our Team" />
+      <Headings title="Meet Our Team" description=" Lorem ipsum dolor sit amet consectetur. Faucibus arcu ultrices gravida
+        et dictumst duis gravida odio semper. Integer potenti viverra et
+        interdum lobortis amet nisi lorem. Amet sed sit risus dictum dolor. Sem
+        enim eget ac morbi placerat. interdum lobortis amet nisi lorem. Amet sed" />
       <TeamCArd />
       <Headings title="Contact Us" />
       <StyledMapParent className="flex gap-3 justify-center">

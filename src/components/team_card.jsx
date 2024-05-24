@@ -63,7 +63,7 @@ const TeamCardList = () => {
   ];
 
   return (
-    <StyledCardWrapper className="grid grid-cols-2 md:grid-cols-4 gap-4  pt-10 ">
+    <StyledCardWrapper className="grid grid-cols-2 md:grid-cols-4 gap-4  py-6 ">
       {cardsData.map((card, index) => (
         <div key={index}>
           <StyledCard className="py-4 pb-0 px-4 flex-col items-center">

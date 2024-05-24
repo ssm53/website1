@@ -3,8 +3,8 @@ import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 const Partners = () => (
-  <div className="py-10">
-    <Marquee className="my-12">
+  <div className="pb-16">
+    <Marquee className="my-8">
       <div className="px-20">
         <img
           src="./svgs/partner2.jpg"

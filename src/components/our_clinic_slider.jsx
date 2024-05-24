@@ -47,7 +47,7 @@ function MultipleItems() {
     ],
   };
   return (
-    <StyledWrapper className="slider-container pt-14">
+    <StyledWrapper className="slider-container py-2">
       <StyledSlider {...settings}>
         <StyledImageContainer>
           <StyledImage

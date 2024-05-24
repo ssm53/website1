@@ -1,5 +1,6 @@
 import React from "react";
-
+import { Button } from "@nextui-org/react";
+import styled from "styled-components";
 const SendUsInquiry = () => {
   return (
     <div className="pb-20" style={{ width: "90%", margin: "0 auto" }}>
@@ -58,19 +59,7 @@ const SendUsInquiry = () => {
           />
         </div>
         <div className="flex justify-center pt-10">
-          <button
-            style={{
-              width: "12rem",
-              height: "50px",
-              background: "#007bff",
-              color: "#fff",
-              border: "none",
-              borderRadius: "4px",
-              cursor: "pointer",
-            }}
-          >
-            Send Message
-          </button>
+          <StyledButton>Send Message</StyledButton>
         </div>
       </form>
     </div>
@@ -78,3 +67,14 @@ const SendUsInquiry = () => {
 };
 
 export default SendUsInquiry;
+
+const StyledButton = styled(Button)`
+  width: 12rem;
+  height: 50px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+`;

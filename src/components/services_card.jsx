@@ -158,4 +158,6 @@ const StyledLoadMoreButton = styled(Button)`
   width: 200px;
   height: 50px;
   background-color: #007bff;
+  color: white;
+  font-weight: 600;
 `;

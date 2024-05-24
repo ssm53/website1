@@ -12,7 +12,7 @@ export default function Map() {
     zoom: 11,
   };
   return (
-    <StyledMapContainer className="pt-10">
+    <StyledMapContainer className="py-4">
       <StyledMapWrapper>
         <GoogleMapReact
           // bootstrapURLKeys={{ key: "" }}
