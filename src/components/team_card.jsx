@@ -6,7 +6,16 @@ import { useInView } from "react-intersection-observer";
 
 const TeamCardList = () => {
   const controls = useAnimation();
-  const { ref, inView } = useInView();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ y: 0, opacity: 1 });
+    }
+  }, [controls, inView]);
   const cardsData = [
     {
       title: "Dr John Doe",
@@ -65,23 +74,19 @@ const TeamCardList = () => {
       imageUrl: "./svgs/team8.jpg",
     },
   ];
-  React.useEffect(() => {
-    if (inView) {
-      controls.start({
-        opacity: 1,
-        y: 0,
-        transition: { duration: 0.5, type: "spring", stiffness: 100 },
-      });
-    }
-  }, [controls, inView]);
+
   return (
-    <StyledCardWrapper className="grid grid-cols-2 md:grid-cols-4 gap-4  py-6 ">
+    <StyledCardWrapper
+      className="grid grid-cols-2 md:grid-cols-4 gap-4  py-6 "
+      ref={ref}
+    >
       {cardsData.map((card, index) => (
         <AnimatedCard
           key={index}
-          ref={ref}
+          // ref={ref}
+          initial={{ opacity: 0, y: 100 }}
           animate={controls}
-          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 1 }}
         >
           <StyledCard className="py-4 pb-0 px-4 flex-col items-center">
             <Image

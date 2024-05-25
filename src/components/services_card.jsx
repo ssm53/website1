@@ -20,7 +20,7 @@ const ServiceCard = ({ icon, header, body }) => {
   return (
     <motion.div
       ref={ref}
-      className="p-7 my-1"
+      className="py-7 my-1"
       initial={{ opacity: 0, y: 100 }}
       animate={controls}
       transition={{ duration: 1 }}
@@ -144,7 +144,7 @@ export default ServicesCard;
 
 const StyledWrapper = styled.div`
   background-color: red;
-  width: calc() 90%;
+  width: calc(90%);
 `;
 const StyledHeading = styled.h2`
   font-size: 20px;

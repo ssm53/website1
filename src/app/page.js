@@ -13,7 +13,7 @@ import Partners from "@/components/partners";
 
 export default function Home() {
   return (
-    <main>
+    <main style={{ margin: '0 auto' }}>
       <Hero />
       <Headings
         title="Our Services"

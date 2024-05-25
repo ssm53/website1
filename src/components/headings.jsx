@@ -8,7 +8,7 @@ const Headings = (props) => {
     threshold: 0.5,
   });
   return (
-    <div ref={ref} className="flex flex-col items-center pt-14 pb-8">
+    <div ref={ref} className="flex flex-col items-center py-16">
       <StyledHeading
         className="text-3xl md:text-4xl lg:text-[48px] font-semibold text-center"
         i
@@ -44,4 +44,6 @@ const Headings = (props) => {
 
 export default Headings;
 
-const StyledHeading = styled(motion.h2)``;
+const StyledHeading = styled(motion.h2)`
+  padding-top: 2rem;
+`;
