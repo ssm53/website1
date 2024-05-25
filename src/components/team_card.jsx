@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const TeamCardList = () => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView();
   const cardsData = [
     {
       title: "Dr John Doe",
@@ -61,11 +65,24 @@ const TeamCardList = () => {
       imageUrl: "./svgs/team8.jpg",
     },
   ];
-
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.5, type: "spring", stiffness: 100 },
+      });
+    }
+  }, [controls, inView]);
   return (
     <StyledCardWrapper className="grid grid-cols-2 md:grid-cols-4 gap-4  py-6 ">
       {cardsData.map((card, index) => (
-        <div key={index}>
+        <AnimatedCard
+          key={index}
+          ref={ref}
+          animate={controls}
+          initial={{ opacity: 0, y: 50 }}
+        >
           <StyledCard className="py-4 pb-0 px-4 flex-col items-center">
             <Image
               alt="Card background"
@@ -84,7 +101,7 @@ const TeamCardList = () => {
             </CardHeader>
             <CardBody className="overflow-visible py-2"></CardBody>
           </StyledCard>
-        </div>
+        </AnimatedCard>
       ))}
     </StyledCardWrapper>
   );
@@ -99,4 +116,7 @@ const StyledCard = styled(Card)`
 const StyledCardWrapper = styled.div`
   width: 90%;
   margin: 0 auto;
+`;
+const AnimatedCard = styled(motion.div)`
+  opacity: 0;
 `;

@@ -3,9 +3,27 @@ import styled from "styled-components";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import { CiHospital1 } from "react-icons/ci";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 const ServiceCard = ({ icon, header, body }) => {
+  const controls = useAnimation();
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+  React.useEffect(() => {
+    if (inView) {
+      controls.start({ y: 0, opacity: 1 });
+    }
+  }, [controls, inView]);
+
   return (
-    <div
+    <motion.div
+      ref={ref}
+      className="p-7 my-1"
+      initial={{ opacity: 0, y: 100 }}
+      animate={controls}
+      transition={{ duration: 1 }}
       style={{
         margin: "0 auto",
         width: "auto",
@@ -23,7 +41,7 @@ const ServiceCard = ({ icon, header, body }) => {
           <StyledButton>Learn More</StyledButton>
         </CardFooter>
       </StyledCard>
-    </div>
+    </motion.div>
   );
 };
 

@@ -102,6 +102,5 @@ const StyledFaqWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
-
   padding: 0 20px;
 `;
