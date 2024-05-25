@@ -1,6 +1,7 @@
 "use client";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useRouter } from "next/router";
 
 import {
   Navbar,
@@ -12,57 +13,110 @@ import {
   NavbarMenuItem,
   Link,
 } from "@nextui-org/react";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Logo from "../../public/svgs/Logo.svg";
 
 const NavbarComponent = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const menuItems = ["Home", "Services", "Our Team", "Contact Us", "FAQs"];
+  const [currentPath, setCurrentPath] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const { pathname } = window.location;
+      setCurrentPath(pathname);
+    }
+  }, []);
 
   return (
     <StyledNavbar
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="full"
       justify="center"
+      style={{
+        borderBottom: currentPath === "/services" ? "1px solid #00000038" : "",
+      }}
     >
       <StyledNavbarItem>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <NavbarBrand>
+        <motion.NavbarBrand
+        // initial={{ opacity: 0, y: 50 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{
+        //   duration: 0.8,
+        //   ease: [0.6, -0.05, 0.01, 0.99],
+        // }}
+        >
           <Image src={Logo} alt="Logo" width={58} height={58} />
-          <p className="text-white font-bold pl-3"> LOGO</p>
-        </NavbarBrand>
+        </motion.NavbarBrand>
       </StyledNavbarItem>
 
-      <NavbarContent className="hidden sm:flex gap-14" justify="end">
+      <motion.NavbarContent
+        className="hidden sm:flex gap-14"
+        justify="end"
+        // initial={{ opacity: 0, y: 50 }}
+        // animate={{ opacity: 1, y: 0 }}
+        // transition={{
+        //   duration: 0.8,
+        //   ease: [0.6, -0.05, 0.01, 0.99],
+        // }}
+      >
         <StyledCustomNavItem>
-          <Link className="text-white" href="/">
+          <Link
+            className={` ${
+              currentPath === "/services" ? "text-black" : "text-white"
+            }`}
+            href="/"
+          >
             Home
           </Link>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link href="/services" className="text-white" aria-current="page">
+          <Link
+            href="/services"
+            className={` ${
+              currentPath === "/services" ? "text-black" : "text-white"
+            }`}
+            aria-current="page"
+          >
             Services
           </Link>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link className="text-white" href="#">
+          <Link
+            className={` ${
+              currentPath === "/services" ? "text-black" : "text-white"
+            }`}
+            href="#"
+          >
             Our Team
           </Link>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link className="text-white" href="#">
+          <Link
+            className={` ${
+              currentPath === "/services" ? "text-black" : "text-white"
+            }`}
+            href="#"
+          >
             Contact Us
           </Link>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link className="text-white" href="#">
+          <Link
+            className={` ${
+              currentPath === "/services" ? "text-black" : "text-white"
+            }`}
+            href="#"
+          >
             FAQs
           </Link>
         </StyledCustomNavItem>
-      </NavbarContent>
+      </motion.NavbarContent>
 
       <MobNavbarMenu>
         {menuItems.map((item, index) => (
@@ -94,7 +148,6 @@ const StyledNavbar = styled(Navbar)`
   height: 100px;
   display: flex;
   justify-content: space-between;
-  /* gap: 5; */
   margin: 0 auto;
   position: absolute;
   top: 0;
@@ -115,7 +168,13 @@ const StyledNavbarItem = styled(NavbarContent)`
   gap: 3rem;
 `;
 
-const StyledCustomNavItem = styled(NavbarItem)``;
+const StyledCustomNavItem = styled(NavbarItem)`
+  a {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+`;
 const MobNavbarMenu = styled(NavbarMenu)`
   margin-top: 2rem;
   gap: 30px;

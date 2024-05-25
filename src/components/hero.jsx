@@ -7,22 +7,34 @@ const Hero = () => {
     <StyledSection className="bg-[url('/svgs/edited.png')] h-screen ">
       <StyledHeadingContainer className="flex-col text-dark pt-5">
         <motion.h2
-          animate={{ y: -100 }}
-          transition={{ delay: 0.5 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.6, -0.05, 0.01, 0.99],
+          }}
           className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-8xl"
         >
           Health Is
         </motion.h2>
         <motion.h2
-          animate={{ y: -100 }}
-          transition={{ delay: 1 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.4,
+            ease: [0.6, -0.05, 0.01, 0.99],
+          }}
           className="font-bold text-3xl sm:text-5xl md:text-6xl lg:text-7xl  xl:text-10xl"
         >
           LOVE, COMPASSION
         </motion.h2>
         <motion.h2
-          animate={{ y: -100 }}
-          transition={{ delay: 1.5 }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1.6,
+            ease: [0.6, -0.05, 0.01, 0.99],
+          }}
           className="font-normal text-4xl sm:text-5xl md:text-5xl lg:text-6xl  xl:text-8xl"
         >
           AND CARE
