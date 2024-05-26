@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
@@ -6,6 +7,7 @@ import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import Link from "next/link";
 import CardsData from "./data";
+
 const ServiceCard = ({ icon, header, body, id }) => {
   const controls = useAnimation();
   const { ref, inView } = useInView({

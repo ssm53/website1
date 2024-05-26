@@ -35,7 +35,9 @@ const NavbarComponent = () => {
       maxWidth="full"
       justify="center"
       style={{
-        borderBottom: currentPath === "/services" ? "1px solid #00000038" : "",
+        borderBottom: currentPath.startsWith("/services")
+          ? "1px solid #00000038"
+          : "",
       }}
     >
       <StyledNavbarItem>
@@ -66,24 +68,26 @@ const NavbarComponent = () => {
         }}
       >
         <StyledCustomNavItem>
-          <ScrollLink
-            className={` ${
-              currentPath === "/services" ? "text-black" : "text-white"
-            }`}
-            to="home"
-            smooth={true}
-            duration={500}
-            spy={true}
-            offset={-70}
+          <Link
+            href="/"
+            style={{
+              color: currentPath === "/" ? "#fff" : "",
+              borderBottom: currentPath.startsWith("/services")
+                ? "1px solid #00000038"
+                : "#a1131338",
+            }}
           >
             Home
-          </ScrollLink>
+          </Link>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
           <ScrollLink
-            className={` ${
-              currentPath === "/services" ? "text-black" : "text-white"
-            }`}
+            style={{
+              color: currentPath === "/" ? "#fff" : "",
+              borderBottom: currentPath.startsWith("/services")
+                ? "1px solid #00000038"
+                : "",
+            }}
             to="services"
             smooth={true}
             duration={500}
@@ -95,9 +99,12 @@ const NavbarComponent = () => {
         </StyledCustomNavItem>
         <StyledCustomNavItem>
           <ScrollLink
-            className={` ${
-              currentPath === "/services" ? "text-black" : "text-white"
-            }`}
+            style={{
+              color: currentPath === "/" ? "#fff" : "",
+              borderBottom: currentPath.startsWith("/services")
+                ? "1px solid #00000038"
+                : "",
+            }}
             to="ourteam"
             smooth={true}
             duration={500}
@@ -109,9 +116,12 @@ const NavbarComponent = () => {
         </StyledCustomNavItem>
         <StyledCustomNavItem>
           <ScrollLink
-            className={` ${
-              currentPath === "/services" ? "text-black" : "text-white"
-            }`}
+            style={{
+              color: currentPath === "/" ? "#fff" : "",
+              borderBottom: currentPath.startsWith("/services")
+                ? "1px solid #00000038"
+                : "",
+            }}
             to="contactus"
             smooth={true}
             duration={500}
@@ -123,9 +133,12 @@ const NavbarComponent = () => {
         </StyledCustomNavItem>
         <StyledCustomNavItem>
           <ScrollLink
-            className={` ${
-              currentPath === "/services" ? "text-black" : "text-white"
-            }`}
+            style={{
+              color: currentPath === "/" ? "#fff" : "",
+              borderBottom: currentPath.startsWith("/services")
+                ? "1px solid #00000038"
+                : "",
+            }}
             to="faqs"
             smooth={true}
             duration={500}
@@ -190,7 +203,7 @@ const StyledNavbarItem = styled(NavbarContent)`
 const StyledCustomNavItem = styled(NavbarItem)`
   a {
     &:hover {
-      text-decoration: underline;
+      cursor: pointer;
     }
   }
 `;
