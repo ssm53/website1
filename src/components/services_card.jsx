@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Card, CardHeader, CardBody, CardFooter } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
-import { CiHospital1 } from "react-icons/ci";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-const ServiceCard = ({ icon, header, body }) => {
+import Link from "next/link";
+import CardsData from "./data";
+const ServiceCard = ({ icon, header, body, id }) => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true,
@@ -38,7 +39,9 @@ const ServiceCard = ({ icon, header, body }) => {
           <p>{body}</p>
         </CardBody>
         <CardFooter className="flex justify-center pt-8">
-          <StyledButton>Learn More</StyledButton>
+          <Link href={`/services/${id}`}>
+            <StyledButton>Learn More</StyledButton>
+          </Link>
         </CardFooter>
       </StyledCard>
     </motion.div>
@@ -47,58 +50,6 @@ const ServiceCard = ({ icon, header, body }) => {
 
 const ServicesCard = () => {
   const [showAll, setShowAll] = useState(false);
-  const cardsData = [
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-    {
-      icon: <CiHospital1 size={80} />,
-      header: "Services Overview 1",
-      body: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ut velit dolorem dignissimos et neque id cupiditate aspernatur obcaecati",
-    },
-  ];
 
   const handleToggleCards = () => {
     setShowAll((prevShowAll) => !prevShowAll);
@@ -112,24 +63,24 @@ const ServicesCard = () => {
     >
       <ServicesGrid>
         {showAll
-          ? cardsData.map((card, index) => (
+          ? CardsData.map((card, index) => (
               <ServiceCard
                 key={index}
+                id={card.id}
                 icon={card.icon}
                 header={card.header}
                 body={card.body}
               />
             ))
-          : cardsData
-              .slice(0, 6)
-              .map((card, index) => (
-                <ServiceCard
-                  key={index}
-                  icon={card.icon}
-                  header={card.header}
-                  body={card.body}
-                />
-              ))}
+          : CardsData.slice(0, 6).map((card, index) => (
+              <ServiceCard
+                key={index}
+                id={card.id}
+                icon={card.icon}
+                header={card.header}
+                body={card.body}
+              />
+            ))}
       </ServicesGrid>
       <div className="flex justify-center pt-8">
         <StyledLoadMoreButton className="" onClick={handleToggleCards}>

@@ -28,6 +28,15 @@ const NavbarComponent = () => {
       setCurrentPath(pathname);
     }
   }, []);
+  const handleScrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId); // Get element by ID
+    if (element) {
+      // Smooth scroll with behavior: 'smooth' for a more natural user experience
+      element.scrollIntoView({ behavior: "smooth" });
+    } else {
+      console.warn(`Element with ID '${sectionId}' not found.`);
+    }
+  };
 
   return (
     <StyledNavbar
