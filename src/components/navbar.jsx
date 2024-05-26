@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { useRouter } from "next/router";
+import { Link as ScrollLink } from "react-scroll";
 
 import {
   Navbar,
@@ -28,15 +28,6 @@ const NavbarComponent = () => {
       setCurrentPath(pathname);
     }
   }, []);
-  const handleScrollToSection = (sectionId) => {
-    const element = document.getElementById(sectionId); // Get element by ID
-    if (element) {
-      // Smooth scroll with behavior: 'smooth' for a more natural user experience
-      element.scrollIntoView({ behavior: "smooth" });
-    } else {
-      console.warn(`Element with ID '${sectionId}' not found.`);
-    }
-  };
 
   return (
     <StyledNavbar
@@ -53,12 +44,12 @@ const NavbarComponent = () => {
           className="sm:hidden"
         />
         <motion.NavbarBrand
-        // initial={{ opacity: 0, y: 50 }}
-        // animate={{ opacity: 1, y: 0 }}
-        // transition={{
-        //   duration: 0.8,
-        //   ease: [0.6, -0.05, 0.01, 0.99],
-        // }}
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.8,
+            ease: [0.6, -0.05, 0.01, 0.99],
+          }}
         >
           <Image src={Logo} alt="Logo" width={58} height={58} />
         </motion.NavbarBrand>
@@ -67,63 +58,82 @@ const NavbarComponent = () => {
       <motion.NavbarContent
         className="hidden sm:flex gap-14"
         justify="end"
-        // initial={{ opacity: 0, y: 50 }}
-        // animate={{ opacity: 1, y: 0 }}
-        // transition={{
-        //   duration: 0.8,
-        //   ease: [0.6, -0.05, 0.01, 0.99],
-        // }}
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.8,
+          ease: [0.6, -0.05, 0.01, 0.99],
+        }}
       >
         <StyledCustomNavItem>
-          <Link
+          <ScrollLink
             className={` ${
               currentPath === "/services" ? "text-black" : "text-white"
             }`}
-            href="/"
+            to="home"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
           >
             Home
-          </Link>
+          </ScrollLink>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link
-            href="/services"
+          <ScrollLink
             className={` ${
               currentPath === "/services" ? "text-black" : "text-white"
             }`}
-            aria-current="page"
+            to="services"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
           >
             Services
-          </Link>
+          </ScrollLink>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link
+          <ScrollLink
             className={` ${
               currentPath === "/services" ? "text-black" : "text-white"
             }`}
-            href="#"
+            to="ourteam"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
           >
             Our Team
-          </Link>
+          </ScrollLink>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link
+          <ScrollLink
             className={` ${
               currentPath === "/services" ? "text-black" : "text-white"
             }`}
-            href="#"
+            to="contactus"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
           >
             Contact Us
-          </Link>
+          </ScrollLink>
         </StyledCustomNavItem>
         <StyledCustomNavItem>
-          <Link
+          <ScrollLink
             className={` ${
               currentPath === "/services" ? "text-black" : "text-white"
             }`}
-            href="#"
+            to="faqs"
+            smooth={true}
+            duration={500}
+            spy={true}
+            offset={-70}
           >
             FAQs
-          </Link>
+          </ScrollLink>
         </StyledCustomNavItem>
       </motion.NavbarContent>
 

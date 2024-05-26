@@ -14,52 +14,64 @@ import Partners from "@/components/partners";
 export default function Home() {
   return (
     <main style={{ margin: '0 auto' }}>
-      <Hero />
-      <Headings
-        title="Our Services"
-        description=" Lorem ipsum dolor sit amet consectetur. Faucibus arcu ultrices gravida
+      <div id="home">
+        <Hero />
+      </div>
+
+      <div id="services">
+        <Headings
+          title="Our Services"
+          description=" Lorem ipsum dolor sit amet consectetur. Faucibus arcu ultrices gravida
         et dictumst duis gravida odio semper. Integer potenti viverra et
         interdum lobortis amet nisi lorem. Amet sed sit risus dictum dolor. Sem
         enim eget ac morbi placerat. interdum lobortis amet nisi lorem. Amet sed"
-      />
+        />
+        <ServicesCard />
+      </div>
 
-      <ServicesCard />
-      <StyledClinicWrapper className="mt-10 pb-12">
+      <StyledClinicWrapper className="mt-10 pb-12" >
         <Headings title="Our Clinic" />
         <OurClinicSlider />
       </StyledClinicWrapper>
-
-      <Headings title="Meet Our Team" description=" Lorem ipsum dolor sit amet consectetur. Faucibus arcu ultrices gravida
+      <div id="ourteam">
+        <Headings title="Meet Our Team" description=" Lorem ipsum dolor sit amet consectetur. Faucibus arcu ultrices gravida
         et dictumst duis gravida odio semper. Integer potenti viverra et
         interdum lobortis amet nisi lorem. Amet sed sit risus dictum dolor. Sem
         enim eget ac morbi placerat. interdum lobortis amet nisi lorem. Amet sed" />
-      <TeamCArd />
-      <Headings title="Contact Us" />
-      <StyledMapParent className="flex gap-3 justify-center">
-        <StyledMapWrapper>
-          <Map />
-          <Address />
-        </StyledMapWrapper>
-        <StyledMapWrapper>
-          <Map />
-          <Address />
-        </StyledMapWrapper>
-        <StyledMapWrapper>
-          <Map />
-          <Address />
-        </StyledMapWrapper>
-      </StyledMapParent>
-      <Headings title="FAQs" />
-      <StyledFaqWrapper>
-        <FAQS />
-        <FAQS />
-        <FAQS />
-        <FAQS />
-        <FAQS />
-        <FAQS />
-        <FAQS />
-        <FAQS />
-      </StyledFaqWrapper>
+        <TeamCArd />
+      </div>
+
+      <div id="contactus">
+        <Headings title="Contact Us" />
+        <StyledMapParent className="flex gap-3 justify-center">
+          <StyledMapWrapper>
+            <Map />
+            <Address />
+          </StyledMapWrapper>
+          <StyledMapWrapper>
+            <Map />
+            <Address />
+          </StyledMapWrapper>
+          <StyledMapWrapper>
+            <Map />
+            <Address />
+          </StyledMapWrapper>
+        </StyledMapParent>
+      </div>
+      <div id="faqs">
+        <Headings title="FAQs" />
+        <StyledFaqWrapper>
+          <FAQS />
+          <FAQS />
+          <FAQS />
+          <FAQS />
+          <FAQS />
+          <FAQS />
+          <FAQS />
+          <FAQS />
+        </StyledFaqWrapper>
+      </div>
+
       <div className="mt-20" style={{ background: "#F4F8FF" }}>
         <Headings title="Send Us An Inquiry" />
         <SendUsInquiry />
