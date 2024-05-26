@@ -71,7 +71,7 @@ const NavbarComponent = () => {
           <Link
             href="/"
             style={{
-              color: currentPath === "/" ? "#fff" : "",
+              color: currentPath === "/" ? "#fff" : "#0e0c0c",
               borderBottom: currentPath.startsWith("/services")
                 ? "1px solid #00000038"
                 : "#a1131338",
