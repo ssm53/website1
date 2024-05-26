@@ -1,10 +1,7 @@
 import React from "react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import styled from "styled-components";
-const FAQS = () => {
-  const defaultContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
-
+const FAQS = ({ question, answer }) => {
   return (
     <StyledWrapper className="pt-4">
       <StyledAccordion variant="light">
@@ -12,9 +9,9 @@ const FAQS = () => {
           className="accordian"
           key="1"
           aria-label="Accordion 1"
-          title="Do you accept new patients?"
+          title={question}
         >
-          {defaultContent}
+          {answer}
         </AccordionItem>
       </StyledAccordion>
     </StyledWrapper>

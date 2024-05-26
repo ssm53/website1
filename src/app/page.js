@@ -11,13 +11,21 @@ import FAQS from "@/components/faqs";
 import SendUsInquiry from "@/components/send-us-inquiry";
 import Partners from "@/components/partners";
 
+const faqs = [
+  { question: "Do you accept new patients?", answer: "Yes, new patients are welcome!" },
+  { question: "Nisl faucibus aliquet tellus tortor sed varius pharetra? ", answer: "Yes, new patients are welcome!" },
+  { question: "Do you accept new patients?", answer: "Yes, new patients are welcome!" },
+  { question: "Do you accept new patients?", answer: "Yes, new patients are welcome!" },
+  { question: "Do you accept new patients?", answer: "Yes, new patients are welcome!" },
+
+];
+
 export default function Home() {
   return (
     <main style={{ margin: '0 auto' }}>
       <div id="home">
         <Hero />
       </div>
-
       <div id="services">
         <Headings
           title="Our Services"
@@ -28,7 +36,6 @@ export default function Home() {
         />
         <ServicesCard />
       </div>
-
       <StyledClinicWrapper className="mt-10 pb-12" >
         <Headings title="Our Clinic" />
         <OurClinicSlider />
@@ -40,7 +47,6 @@ export default function Home() {
         enim eget ac morbi placerat. interdum lobortis amet nisi lorem. Amet sed" />
         <TeamCArd />
       </div>
-
       <div id="contactus">
         <Headings title="Contact Us" />
         <StyledMapParent className="flex gap-3 justify-center">
@@ -61,17 +67,11 @@ export default function Home() {
       <div id="faqs">
         <Headings title="FAQs" />
         <StyledFaqWrapper>
-          <FAQS />
-          <FAQS />
-          <FAQS />
-          <FAQS />
-          <FAQS />
-          <FAQS />
-          <FAQS />
-          <FAQS />
+          {faqs.map((faq, index) => (
+            <FAQS key={index} question={faq.question} answer={faq.answer} />
+          ))}
         </StyledFaqWrapper>
       </div>
-
       <div className="mt-20" style={{ background: "#F4F8FF" }}>
         <Headings title="Send Us An Inquiry" />
         <SendUsInquiry />
@@ -85,7 +85,6 @@ export default function Home() {
 }
 
 const StyledServicesCardWrapper = styled.div`
-  background-color: orange;
 `;
 const StyledClinicWrapper = styled.div`
   background-color: #f4f8ff;
