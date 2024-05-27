@@ -30,13 +30,13 @@ const Address = () => {
             <div className="flex items-center font-bold">
               <FiMail className="mr-2" />
               <p>
-                <a href="mailto:shaunshanil95@gmailcom" className="blue-hover">
+                <a href="mailto:shaunshanil95@gmail.com" className="blue-hover">
                   Email
                 </a>
               </p>
             </div>
-            <a href="mailto:shaunshanil95@gmailcom" className="blue-hover">
-              shaunshanil95@gmailcom
+            <a href="mailto:shaunshanil95@gmail.com" className="blue-hover">
+              shaunshanil95@gmail.com
             </a>
           </div>
           <div className=" pt-6 ">
