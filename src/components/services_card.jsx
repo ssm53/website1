@@ -115,6 +115,11 @@ const StyledButton = styled(Button)`
   color: #003366;
   background-color: transparent;
   font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    background-color: #003366;
+    color: #ffffff;
+  }
 `;
 
 const ServicesGrid = styled.div`
@@ -131,4 +136,9 @@ const StyledLoadMoreButton = styled(Button)`
   background-color: #007bff;
   color: white;
   font-weight: 600;
+  transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    background-color: #003366;
+    color: #ffffff;
+  }
 `;
