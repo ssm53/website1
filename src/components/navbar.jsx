@@ -35,9 +35,7 @@ const NavbarComponent = () => {
       maxWidth="full"
       justify="center"
       style={{
-        borderBottom: currentPath.startsWith("/services")
-          ? "1px solid #00000038"
-          : "",
+        color: currentPath.startsWith("/services") ? "#000000" : "#fff",
       }}
     >
       <StyledNavbarItem>
@@ -55,9 +53,9 @@ const NavbarComponent = () => {
           <Link
             href="/"
             style={{
-              borderBottom: currentPath.startsWith("/services")
-                ? "1px solid #00000038"
-                : "#a1131338",
+              color: currentPath.startsWith("/services")
+                ? " rgba(0, 0, 0, 1)"
+                : "#fff",
             }}
           >
             Home
@@ -66,10 +64,11 @@ const NavbarComponent = () => {
         <StyledCustomNavItem>
           <ScrollLink
             style={{
-              borderBottom: currentPath.startsWith("/services")
-                ? "1px solid #00000038"
-                : "",
+              color: currentPath.startsWith("/services")
+                ? "rgba(0, 0, 0, 1)"
+                : "#fff",
             }}
+            className="links"
             to="services"
             smooth={true}
             duration={500}
@@ -82,9 +81,9 @@ const NavbarComponent = () => {
         <StyledCustomNavItem>
           <ScrollLink
             style={{
-              borderBottom: currentPath.startsWith("/services")
-                ? "1px solid #00000038"
-                : "",
+              color: currentPath.startsWith("/services")
+                ? "rgba(0, 0, 0, 1)"
+                : "#fff",
             }}
             to="ourteam"
             smooth={true}
@@ -98,9 +97,9 @@ const NavbarComponent = () => {
         <StyledCustomNavItem>
           <ScrollLink
             style={{
-              borderBottom: currentPath.startsWith("/services")
-                ? "1px solid #00000038"
-                : "",
+              color: currentPath.startsWith("/services")
+                ? "rgba(0, 0, 0, 1)"
+                : "#fff",
             }}
             to="contactus"
             smooth={true}
@@ -114,9 +113,9 @@ const NavbarComponent = () => {
         <StyledCustomNavItem>
           <ScrollLink
             style={{
-              borderBottom: currentPath.startsWith("/services")
-                ? "1px solid #00000038"
-                : "",
+              color: currentPath.startsWith("/services")
+                ? "rgba(0, 0, 0, 1)"
+                : "#fff",
             }}
             to="faqs"
             smooth={true}
@@ -186,7 +185,6 @@ const StyledNavbarItem = styled(NavbarContent)`
 const StyledCustomNavItem = styled(NavbarItem)`
   a {
     position: relative;
-    color: white;
     &:hover {
       cursor: pointer;
       color: #003466;
