@@ -6,7 +6,6 @@ import servicesData from "../../../components/data";
 const ServicesPage = ({ params }) => {
   const serviceId = params.id;
   const serviceData = servicesData.find((service) => service.id === serviceId);
-  console.log(serviceData);
 
   return (
     <StyledWrapper>
@@ -54,6 +53,7 @@ export default ServicesPage;
 
 const StyledWrapper = styled.div`
   padding: 7rem 0;
+  padding-top: 10rem;
   @media (max-width: 768px) {
     .flex-wrap {
       flex-direction: column;
