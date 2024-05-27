@@ -77,4 +77,8 @@ const StyledButton = styled(Button)`
   cursor: pointer;
   font-weight: 600;
   color: white;
+  transition: background-color 0.3s, color 0.3s;
+  &:hover {
+    background-color: #003366;
+  }
 `;

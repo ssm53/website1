@@ -23,21 +23,33 @@ const Address = () => {
               <FiPhone className="mr-2" />
               <p>Phone</p>
             </div>
-            <p>123-456-7890</p>
+            <p>+60123397028</p>
           </div>
           <div className="pt-6">
             <div className="flex items-center font-bold">
               <FiMail className="mr-2" />
-              <p>Email</p>
+              <p>
+                <a href="mailto:shaunshanil95@gmailcom" className="blue-hover">
+                  Email
+                </a>
+              </p>
             </div>
-            <p>example@example.com</p>
+            <a href="mailto:shaunshanil95@gmailcom" className="blue-hover">
+              shaunshanil95@gmailcom
+            </a>
           </div>
-          <div className=" pt-6">
-            <div className="flex items-center">
+          <div className=" pt-6 ">
+            <div className="flex items-center font-bold">
               <FiMessageSquare className="mr-2" />
-              <p>WhatsApp</p>
+              <p>
+                <a href="https://wa.me/+60123397028" className="blue-hover">
+                  WhatsApp
+                </a>
+              </p>
             </div>
-            <p>123-456-7890</p>
+            <a href="https://wa.me/+60123397028" className="blue-hover">
+              +60123397028
+            </a>
           </div>
         </div>
       </StyledAddressContainer>
@@ -51,4 +63,8 @@ const StyledWrapper = styled.div`
 `;
 const StyledAddressContainer = styled.div`
   margin: 0 auto;
+
+  .blue-hover:hover {
+    color: #007bff;
+  }
 `;
