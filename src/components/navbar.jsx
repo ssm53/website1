@@ -35,7 +35,9 @@ const NavbarComponent = () => {
       maxWidth="full"
       justify="center"
       style={{
-        color: currentPath.startsWith("/services") ? "#000000" : "#fff",
+        borderBottom: currentPath.startsWith("/services")
+          ? "1px solid #bdb0b0"
+          : "#fff",
       }}
     >
       <StyledNavbarItem>
