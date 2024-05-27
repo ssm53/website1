@@ -19,13 +19,19 @@ const ServicesPage = ({ params }) => {
         >
           <div className="text-sec md:w-1/2">
             <div>
-              <h1 className="text-3xl font-semibold py-4">
+              <StyledH1 className="text-3xl font-semibold py-4">
                 Chronic Disease Management
-              </h1>
-              <ul>
+                <img
+                  src="/svgs/verctor.png"
+                  alt="vector"
+                  style={{ width: "72%" }}
+                />
+              </StyledH1>
+              <StyledUl>
                 <StyledListWrapper className="mb-2 py-3">
                   <li className="py-3 ">
-                    <StyledSpan>Item ID</StyledSpan> : {serviceData.id}
+                    <StyledSpan>Item ID</StyledSpan> : {serviceData.id} sit amet
+                    consectetur adipisicing elit. Ut velit dolorem
                   </li>
                   <li className="py-3 ">
                     <StyledSpan>Title</StyledSpan> : {serviceData.header}
@@ -37,7 +43,7 @@ const ServicesPage = ({ params }) => {
                     <StyledSpan>Job</StyledSpan> : {serviceData.jobs}
                   </li>
                 </StyledListWrapper>
-              </ul>
+              </StyledUl>
             </div>
           </div>
           <div className="image-sec md:w-1/2 flex justify-end">
@@ -80,4 +86,18 @@ const StyledListWrapper = styled.li`
 const StyledSpan = styled.span`
   color: #003466;
   font-size: 22px;
+`;
+
+const StyledH1 = styled.h1`
+  color: #003466;
+  @media (max-width: 768px) {
+    img {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+`;
+
+const StyledUl = styled.ul`
+  padding-left: 20px;
 `;
