@@ -29,6 +29,11 @@ const StyledAccordion = styled(Accordion)`
   width: 100%;
   box-shadow: -2px 4px 10px -1px rgba(0, 0, 0, 0.1);
   padding: 0 2rem;
+  transition: box-shadow 0.3s, background-color 0.3s;
+  &:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    background-color: #f4f8ff; /* Change to your preferred hover background color */
+  }
 
   .text-default-400 {
     border-radius: 50%;
