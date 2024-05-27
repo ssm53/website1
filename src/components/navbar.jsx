@@ -190,6 +190,10 @@ const StyledNavbar = styled(Navbar)`
     width: 90%;
     margin: 0 auto;
     padding: 0;
+
+    ul {
+      justify-content: space-between !important;
+    }
   }
 `;
 
