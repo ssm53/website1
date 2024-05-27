@@ -45,5 +45,5 @@ const Headings = (props) => {
 export default Headings;
 
 const StyledHeading = styled(motion.h2)`
-  padding-top: 2rem;
+  /* padding-top: 2rem; */
 `;

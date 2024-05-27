@@ -47,7 +47,7 @@ export default function Home() {
         enim eget ac morbi placerat. interdum lobortis amet nisi lorem. Amet sed" />
         <TeamCArd />
       </div>
-      <div id="contactus">
+      <StyledContactUsWrapper id="contactus" className="py-10">
         <Headings title="Contact Us" />
         <StyledMapParent className="flex gap-3 justify-center">
           <StyledMapWrapper>
@@ -63,7 +63,7 @@ export default function Home() {
             <Address />
           </StyledMapWrapper>
         </StyledMapParent>
-      </div>
+      </StyledContactUsWrapper>
       <div id="faqs">
         <Headings title="FAQs" />
         <StyledFaqWrapper>
@@ -115,3 +115,8 @@ const StyledFaqWrapper = styled.div`
   gap: 12px;
   padding: 0 20px;
 `;
+
+const StyledContactUsWrapper = styled.div`
+background-color:#F1F1F1;
+
+`
