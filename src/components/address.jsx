@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { FiMapPin, FiPhone, FiMail, FiMessageSquare } from "react-icons/fi";
+import { FaWhatsapp } from "react-icons/fa";
 
 const Address = () => {
   return (
@@ -40,7 +41,7 @@ const Address = () => {
           </div>
           <div className=" pt-6 ">
             <div className="flex items-center font-bold">
-              <FiMessageSquare className="mr-2" />
+              <FaWhatsapp className="mr-2" />
               <p>
                 <a href="https://wa.me/+60123397028" className="blue-hover">
                   WhatsApp
