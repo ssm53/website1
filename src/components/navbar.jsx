@@ -45,33 +45,16 @@ const NavbarComponent = () => {
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="sm:hidden"
         />
-        <motion.NavbarBrand
-        // initial={{ opacity: 0, y: 50 }}
-        // animate={{ opacity: 1, y: 0 }}
-        // transition={{
-        //   duration: 0.8,
-        //   ease: [0.6, -0.05, 0.01, 0.99],
-        // }}
-        >
+        <motion.NavbarBrand>
           <Image src={Logo} alt="Logo" width={58} height={58} />
         </motion.NavbarBrand>
       </StyledNavbarItem>
 
-      <motion.NavbarContent
-        className="hidden sm:flex gap-14"
-        justify="end"
-        // initial={{ opacity: 0, y: 50 }}
-        // animate={{ opacity: 1, y: 0 }}
-        // transition={{
-        //   duration: 0.8,
-        //   ease: [0.6, -0.05, 0.01, 0.99],
-        // }}
-      >
+      <motion.NavbarContent className="hidden sm:flex gap-14" justify="end">
         <StyledCustomNavItem>
           <Link
             href="/"
             style={{
-              color: currentPath === "/" ? "#fff" : "#0e0c0c",
               borderBottom: currentPath.startsWith("/services")
                 ? "1px solid #00000038"
                 : "#a1131338",
@@ -83,7 +66,6 @@ const NavbarComponent = () => {
         <StyledCustomNavItem>
           <ScrollLink
             style={{
-              color: currentPath === "/" ? "#fff" : "",
               borderBottom: currentPath.startsWith("/services")
                 ? "1px solid #00000038"
                 : "",
@@ -100,7 +82,6 @@ const NavbarComponent = () => {
         <StyledCustomNavItem>
           <ScrollLink
             style={{
-              color: currentPath === "/" ? "#fff" : "",
               borderBottom: currentPath.startsWith("/services")
                 ? "1px solid #00000038"
                 : "",
@@ -117,7 +98,6 @@ const NavbarComponent = () => {
         <StyledCustomNavItem>
           <ScrollLink
             style={{
-              color: currentPath === "/" ? "#fff" : "",
               borderBottom: currentPath.startsWith("/services")
                 ? "1px solid #00000038"
                 : "",
@@ -134,7 +114,6 @@ const NavbarComponent = () => {
         <StyledCustomNavItem>
           <ScrollLink
             style={{
-              color: currentPath === "/" ? "#fff" : "",
               borderBottom: currentPath.startsWith("/services")
                 ? "1px solid #00000038"
                 : "",
@@ -206,8 +185,26 @@ const StyledNavbarItem = styled(NavbarContent)`
 
 const StyledCustomNavItem = styled(NavbarItem)`
   a {
+    position: relative;
+    color: white;
     &:hover {
       cursor: pointer;
+      color: #003466;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: #003466;
+      transform-origin: bottom center;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+    &:hover::after {
+      transform: scaleX(1);
     }
   }
 `;
