@@ -77,7 +77,7 @@ const StyledWrapper = styled.div`
   }
 `;
 
-const StyledListWrapper = styled.li`
+const StyledListWrapper = styled.div`
   font-size: 20px;
   font-weight: 400;
   list-style-type: disc;
