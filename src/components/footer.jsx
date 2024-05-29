@@ -22,11 +22,7 @@ const Footer = () => {
                 <h2 className="text-lg font-bold">Logo</h2>
               </div>
 
-              <p className="pt-8">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deserunt sint repellendus cum nisi mollitia. Quisquam, vel
-                corporis repellat ab quam veritatis illo ullam nihil
-              </p>
+              <p className="pt-8">Health is Love, Compassion and Care.</p>
             </div>
           </StyledLogoWrapper>
 
@@ -61,7 +57,7 @@ const Footer = () => {
           <StyledFollowusWrapper className="w-1/3 ">
             <h3 className="text-lg font-bold mb-4">Follow Us</h3>
             <div className="icons flex pt-8">
-              <a href="#">
+              {/* <a href="#">
                 <FaFacebook className="w-8 h-8 mr-2" />
               </a>
               <a href="#">
@@ -69,8 +65,8 @@ const Footer = () => {
               </a>
               <a href="#">
                 <FaLinkedin className="w-8 h-8 mr-2" />
-              </a>
-              <a href="#">
+              </a> */}
+              <a href="https://www.instagram.com/explore/locations/21844218/klinik-keluarga-desa/">
                 <FaInstagram className="w-8 h-8 mr-2" />
               </a>
             </div>
