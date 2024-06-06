@@ -8,7 +8,7 @@ const TeamCardList = () => {
   const controls = useAnimation();
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.5,
+    threshold: 0.1,
   });
 
   React.useEffect(() => {
@@ -116,6 +116,14 @@ export default TeamCardList;
 
 const StyledCard = styled(Card)`
   background-color: #f4f8ff;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px;
+  padding: 16px 0;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+  }
 `;
 
 const StyledCardWrapper = styled.div`
